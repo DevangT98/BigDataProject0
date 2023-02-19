@@ -3124,3 +3124,87 @@ SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
 2023.02.18 18:57:32 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at c:\DeV\recursion\.metals\lsp.trace.json or C:\Users\crdne\AppData\Local\scalameta\metals\cache\lsp.trace.json
 2023.02.18 18:57:34 INFO  logging to file C:\DeV\recursion\.metals\metals.log
 2023.02.18 18:57:34 INFO  Started: Metals version 0.11.10 in workspace 'C:\DeV\recursion' for client Visual Studio Code 1.75.1.
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/C:/Users/crdne/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.10.5/scribe-slf4j_2.13-3.10.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2023.02.18 18:57:36 INFO  time: initialize in 2.38s
+2023.02.18 18:57:38 INFO  Attempting to connect to the build server...
+2023.02.18 18:57:38 INFO  Bloop uses C:\Java\jdk-11.0.18 defined at C:\Users\crdne\.bloop\bloop.json
+2023.02.18 18:57:38 INFO  skipping build import with status 'Installed'
+2023.02.18 18:57:42 INFO  no build target found for C:\DeV\recursion\src\main\scala\recursion\Main.scala. Using presentation compiler with project's scala-library version: 3.2.1
+2023.02.18 18:57:44 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\DeV\recursion\.metals\bsp.trace.json or C:\Users\crdne\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2023.02.18 18:57:44 INFO  Attempting to connect to the build server...
+2023.02.18 18:57:44 INFO  Bloop uses C:\Java\jdk-11.0.18 defined at C:\Users\crdne\.bloop\bloop.json
+2023.02.18 18:57:44 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\DeV\recursion\project\.metals\bsp.trace.json or C:\Users\crdne\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2023.02.18 18:57:44 INFO  time: Connected to build server in 6.38s
+2023.02.18 18:57:44 INFO  Connected to Build server: Bloop v1.5.6
+2023.02.18 18:57:45 INFO  time: Imported build in 0.26s
+2023.02.18 18:57:45 INFO  time: code lens generation in 6.75s
+2023.02.18 18:57:48 INFO  time: indexed workspace in 3.79s
+Feb 18, 2023 6:57:50 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "build/taskFinish",
+  "params": {
+    "taskId": {
+      "id": "1"
+    },
+    "eventTime": 1676764669837,
+    "message": "Compiled \u0027recursion\u0027",
+    "status": 1,
+    "dataKind": "compile-report",
+    "data": {
+      "target": {
+        "uri": "file:/C:/DeV/recursion/?id\u003drecursion"
+      },
+      "errors": 0,
+      "warnings": 0,
+      "isNoOp": true,
+      "isLastCycle": true,
+      "clientDir": "file:///C:/DeV/recursion/.bloop/recursion/bloop-bsp-clients-classes/classes-Metals-vgv66DkkT96yKE325FnAOA\u003d\u003d/",
+      "analysisOut": "file:///C:/DeV/recursion/.bloop/recursion/recursion-analysis.bin"
+    }
+  }
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.NullPointerException
+	at scala.meta.internal.metals.Compilers.$anonfun$didCompile$3(Compilers.scala:252)
+	at scala.meta.internal.metals.Compilers.$anonfun$didCompile$3$adapted(Compilers.scala:250)
+	at scala.Option.foreach(Option.scala:437)
+	at scala.meta.internal.metals.Compilers.$anonfun$didCompile$2(Compilers.scala:250)
+	at scala.meta.internal.metals.Compilers.$anonfun$didCompile$2$adapted(Compilers.scala:249)
+	at scala.collection.mutable.HashSet$Node.foreach(HashSet.scala:435)
+	at scala.collection.mutable.HashSet.foreach(HashSet.scala:361)
+	at scala.meta.internal.metals.Compilers.didCompile(Compilers.scala:249)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$updateWorkspaceDirectory$14(MetalsLanguageServer.scala:459)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$updateWorkspaceDirectory$14$adapted(MetalsLanguageServer.scala:457)
+	at scala.meta.internal.metals.clients.language.ForwardingMetalsBuildClient.$anonfun$buildTaskFinish$2(ForwardingMetalsBuildClient.scala:160)
+	at scala.Option.foreach(Option.scala:437)
+	at scala.meta.internal.metals.clients.language.ForwardingMetalsBuildClient.$anonfun$buildTaskFinish$1(ForwardingMetalsBuildClient.scala:157)
+	at scala.meta.internal.metals.clients.language.ForwardingMetalsBuildClient.$anonfun$buildTaskFinish$1$adapted(ForwardingMetalsBuildClient.scala:156)
+	at scala.Option.foreach(Option.scala:437)
+	at scala.meta.internal.metals.clients.language.ForwardingMetalsBuildClient.buildTaskFinish(ForwardingMetalsBuildClient.scala:156)
+	... 16 more
+
